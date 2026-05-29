@@ -100,10 +100,10 @@ function Hero() {
 
 function About() {
   const items = [
-    { icon: Dumbbell, label: "Strength Training" },
-    { icon: Salad, label: "Nutrition Planning" },
-    { icon: MessageCircle, label: "Direct 1-1 Support" },
-    { icon: CalendarCheck, label: "Weekly Check-ins" },
+    { icon: Dumbbell, label: "Strength & Conditioning" },
+    { icon: Salad, label: "Functional Fitness" },
+    { icon: MessageCircle, label: "Yoga-Integrated Training" },
+    { icon: CalendarCheck, label: "Personalized Programs" },
   ];
   return (
     <section id="coaching" className="relative px-5 py-24 md:px-8 md:py-32">
@@ -112,27 +112,29 @@ function About() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border">
             <img
               src={coachImg}
-              alt="Your personal coach"
+              alt="Anupam Jain — Performance Coach"
               loading="lazy"
               width={1024} height={1280}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent p-6">
+              <p className="font-display text-2xl tracking-wide">ANUPAM JAIN</p>
               <p className="text-xs uppercase tracking-widest text-muted-foreground">
-                Photo coming soon — replace with trainer image
+                Performance Coach · Elite Performance Lab
               </p>
             </div>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Your Coach</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Meet Your Coach</p>
           <h2 className="font-display text-5xl leading-none tracking-wide sm:text-6xl md:text-7xl">
-            Built to Help<br />You Win.
+            Train Smart.<br />Perform Elite.
           </h2>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            I'm a certified personal trainer and nutrition coach based in Bilawali, MP. I specialize in
-            body transformation, fat loss, lean muscle building, and lifestyle management. Every plan I
-            create is 100% personalized — because your body is unique.
+            Anupam Jain is a Performance Coach specializing in Strength & Conditioning, Functional
+            Fitness, and Yoga-integrated training. Through <span className="text-foreground font-medium">Elite Performance Lab</span> &
+            <span className="text-foreground font-medium"> 1on1Coaching</span>, he helps athletes and individuals improve strength,
+            performance, and overall fitness with a scientific and personalized approach.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {items.map(({ icon: Icon, label }) => (
