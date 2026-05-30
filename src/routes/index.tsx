@@ -61,14 +61,9 @@ function Hero() {
       <div className="absolute inset-0 gradient-hero" />
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40">
-        <Reveal>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.4em] text-[var(--brand-teal)]">
-            Bilawali · Madhya Pradesh
-          </p>
-        </Reveal>
         <Reveal delay={0.1}>
           <h1 className="font-display text-[3.5rem] leading-[0.9] tracking-wide sm:text-7xl md:text-8xl lg:text-[9.5rem]">
-            TRANSFORM<br />YOUR BODY.
+            UNLOCK YOUR<br />PEAK PERFORMANCE.
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
@@ -414,7 +409,7 @@ function ContactCTA() {
         <Reveal delay={0.3}>
           <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
-              { icon: MapPin, text: "Rani Bagh Main, Bilawali, MP 452020" },
+              { icon: MapPin, text: "MIG Colony, New Palasia, Indore, MP 452011" },
               { icon: Phone, text: "+91 7489 414 311" },
               { icon: Clock, text: "Open: 8:00 AM – 8:00 PM" },
             ].map(({ icon: Icon, text }) => (
@@ -451,7 +446,7 @@ function Footer() {
             <span className="text-primary">1ON1</span> COACHING
           </div>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from Bilawali, MP.
+            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from MIG Colony, New Palasia, Indore.
           </p>
         </div>
         <div>
