@@ -229,11 +229,6 @@ function Plans() {
                 <WaButton href={p.wa} className="w-full">{p.cta}</WaButton>
               </div>
 
-              {"soon" in p && p.soon && (
-                <div className="absolute inset-0 flex items-center justify-center bg-background/70 backdrop-blur-[2px]">
-                  <span className="font-display text-3xl tracking-widest text-foreground/90">COMING SOON</span>
-                </div>
-              )}
             </div>
           </Reveal>
         ))}
