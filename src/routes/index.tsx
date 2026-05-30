@@ -194,7 +194,7 @@ function Plans() {
         />
       </Reveal>
 
-      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-3">
         {plans.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
             <div className={`relative h-full overflow-hidden rounded-2xl border bg-card p-7 glow-teal-hover ${"featured" in p && p.featured ? "border-primary/40" : "border-border"}`}>
