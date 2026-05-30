@@ -171,6 +171,15 @@ function Plans() {
       wa: wa("Hi! I'm interested in the Healthy Living program. Please notify me when it launches."),
     },
     {
+      name: "EAPS",
+      sub: "Elite Athlete Performance System",
+      price: "₹4,999",
+      desc: "Performance-Focused Training for Cricketers & Athletes. Build strength, improve athleticism, and maximize on-field performance through structured strength & conditioning protocols.",
+      features: ["Athlete Assessment", "Customized Training", "Speed & Power Development", "Mobility & Recovery", "Sports-Specific Conditioning"],
+      cta: "Enroll in EAPS →",
+      wa: wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further."),
+    },
+    {
       name: "Custom Plan",
       price: "Contact for pricing",
       desc: "A 100% personalized plan built around your specific body, goals, and schedule.",
@@ -178,6 +187,7 @@ function Plans() {
       cta: "Get Custom Plan →",
       wa: wa("Hi! I'd like to discuss a Custom Plan tailored to my goals. Please share details."),
     },
+
   ] as const;
 
   const pills = ["Women's Health", "Child Nutrition", "Sports Nutrition", "Group Classes"];
@@ -192,7 +202,7 @@ function Plans() {
         />
       </Reveal>
 
-      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-3">
+      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
         {plans.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
             <div className={`relative h-full overflow-hidden rounded-2xl border bg-card p-7 glow-teal-hover ${"featured" in p && p.featured ? "border-primary/40" : "border-border"}`}>
