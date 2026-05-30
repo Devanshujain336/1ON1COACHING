@@ -409,7 +409,7 @@ function ContactCTA() {
         <Reveal delay={0.3}>
           <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
-              { icon: MapPin, text: "Rani Bagh Main, Bilawali, MP 452020" },
+              { icon: MapPin, text: "MIG Colony, New Palasia, Indore, MP 452011" },
               { icon: Phone, text: "+91 7489 414 311" },
               { icon: Clock, text: "Open: 8:00 AM – 8:00 PM" },
             ].map(({ icon: Icon, text }) => (
