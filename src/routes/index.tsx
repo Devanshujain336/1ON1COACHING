@@ -163,14 +163,6 @@ function Plans() {
       wa: wa("Hi! I want to enroll in THE CUT program (₹4999). Please guide me further."),
     },
     {
-      name: "Healthy Living",
-      soon: true,
-      sub: "Lifestyle transformation for long-term health",
-      features: ["Lifestyle Management", "Weight Management", "Heart & Brain Health", "Gut Health Improvement"],
-      cta: "Enquire Now →",
-      wa: wa("Hi! I'm interested in the Healthy Living program. Please notify me when it launches."),
-    },
-    {
       name: "EAPS",
       sub: "Elite Athlete Performance System",
       price: "₹4,999",
