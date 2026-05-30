@@ -163,14 +163,6 @@ function Plans() {
       wa: wa("Hi! I want to enroll in THE CUT program (₹4999). Please guide me further."),
     },
     {
-      name: "Healthy Living",
-      soon: true,
-      sub: "Lifestyle transformation for long-term health",
-      features: ["Lifestyle Management", "Weight Management", "Heart & Brain Health", "Gut Health Improvement"],
-      cta: "Enquire Now →",
-      wa: wa("Hi! I'm interested in the Healthy Living program. Please notify me when it launches."),
-    },
-    {
       name: "EAPS",
       sub: "Elite Athlete Performance System",
       price: "₹4,999",
@@ -202,7 +194,7 @@ function Plans() {
         />
       </Reveal>
 
-      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-3">
         {plans.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
             <div className={`relative h-full overflow-hidden rounded-2xl border bg-card p-7 glow-teal-hover ${"featured" in p && p.featured ? "border-primary/40" : "border-border"}`}>
@@ -237,11 +229,6 @@ function Plans() {
                 <WaButton href={p.wa} className="w-full">{p.cta}</WaButton>
               </div>
 
-              {"soon" in p && p.soon && (
-                <div className="absolute inset-0 flex items-center justify-center bg-background/70 backdrop-blur-[2px]">
-                  <span className="font-display text-3xl tracking-widest text-foreground/90">COMING SOON</span>
-                </div>
-              )}
             </div>
           </Reveal>
         ))}
