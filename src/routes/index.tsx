@@ -446,7 +446,7 @@ function Footer() {
             <span className="text-primary">1ON1</span> COACHING
           </div>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from Bilawali, MP.
+            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from MIG Colony, New Palasia, Indore.
           </p>
         </div>
         <div>
