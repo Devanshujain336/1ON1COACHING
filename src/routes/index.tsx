@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Check, Star, Dumbbell, Salad, MessageCircle, CalendarCheck,
   MapPin, Phone, Clock, Instagram, Target, Home as HomeIcon, BarChart3,
+  User, Trophy, ClipboardCheck, Settings, Zap, Activity, Crosshair,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { FloatingWA } from "@/components/site/FloatingWA";
@@ -471,18 +473,252 @@ function Footer() {
   );
 }
 
+type Zone = "coaching" | "lab";
+
+function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => void }) {
+  const tabs: { id: Zone; icon: typeof User; label: string }[] = [
+    { id: "coaching", icon: User, label: "1-on-1 Coaching" },
+    { id: "lab", icon: Trophy, label: "Elite Performance Lab" },
+  ];
+  return (
+    <div className="sticky top-[64px] z-40 border-b border-border bg-background/85 backdrop-blur-xl md:top-[76px]">
+      <div className="mx-auto flex max-w-7xl justify-center px-4 py-3 md:px-8">
+        <div className="relative inline-flex w-full max-w-xl items-center rounded-full border border-border bg-card/60 p-1 sm:w-auto">
+          {tabs.map((t) => {
+            const active = zone === t.id;
+            return (
+              <button
+                key={t.id}
+                onClick={() => onChange(t.id)}
+                className={`relative flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wider transition-colors sm:px-6 sm:text-xs ${
+                  active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {active && (
+                  <motion.span
+                    layoutId="zone-pill"
+                    className="absolute inset-0 rounded-full bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <t.icon className="relative z-10 h-4 w-4" />
+                <span className="relative z-10 whitespace-nowrap">{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LabHero() {
+  return (
+    <section className="relative overflow-hidden px-5 pb-16 pt-16 md:px-8 md:pb-24 md:pt-24">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[var(--brand-teal)]/20 via-background to-background" />
+      <div className="mx-auto max-w-6xl text-center">
+        <Reveal>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--brand-teal)]">
+            <span className="text-primary">●</span> Elite Performance Lab
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h1 className="font-display text-[3rem] leading-[0.9] tracking-wide sm:text-7xl md:text-8xl lg:text-9xl text-balance">
+            ELITE PERFORMANCE LAB
+          </h1>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            Performance-Focused Training for Cricketers & Athletes. Build strength, improve
+            athleticism, and maximize on-field performance through structured strength &
+            conditioning protocols.
+          </p>
+        </Reveal>
+        <Reveal delay={0.3}>
+          <div className="mt-8 flex justify-center">
+            <WaButton href={wa("Hi! I'd like to book a Team Assessment at Elite Performance Lab.")}>
+              Book a Team Assessment →
+            </WaButton>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function LabPillars() {
+  const items = [
+    { icon: ClipboardCheck, title: "Athlete Assessment", desc: "Baseline testing across strength, speed, mobility & endurance." },
+    { icon: Settings, title: "Customized Training", desc: "Programs built around your sport, position & goals." },
+    { icon: Zap, title: "Speed & Power Development", desc: "Explosive output, sprint mechanics & reactive strength." },
+    { icon: Activity, title: "Mobility & Recovery", desc: "Joint health, range of motion & smart recovery protocols." },
+    { icon: Crosshair, title: "Sports-Specific Conditioning", desc: "Cricket-first energy systems & on-field carryover." },
+  ];
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <SectionTitle kicker="Pillars" title="WHAT WE TRAIN" />
+      </Reveal>
+      <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map(({ icon: Icon, title, desc }, i) => (
+          <Reveal key={title} delay={i * 0.06}>
+            <div className="h-full rounded-2xl border border-border bg-card p-6 transition-transform duration-300 hover:-translate-y-0.5 hover:border-[var(--brand-teal)]/50">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-teal)]/15">
+                <Icon className="h-5 w-5 text-[var(--brand-teal)]" />
+              </div>
+              <h3 className="mt-5 font-display text-2xl tracking-wide">{title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LabGallery() {
+  const shots = [
+    { label: "Team Training Photo", caption: "Squad Conditioning", h: "aspect-[4/5]" },
+    { label: "Trophy Wall", caption: "Years of Wins", h: "aspect-square" },
+    { label: "Coaching Session", caption: "1-on-1 Skill Work", h: "aspect-[4/3]" },
+    { label: "Strength Block", caption: "Heavy Day", h: "aspect-square" },
+    { label: "Sprint Drills", caption: "Speed Development", h: "aspect-[3/4]" },
+    { label: "Recovery Lab", caption: "Mobility & Reset", h: "aspect-[4/3]" },
+  ];
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <SectionTitle kicker="Training in Action" title="OUR TRAINING GROUND & WINS" />
+      </Reveal>
+      <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {shots.map((s, i) => (
+          <Reveal key={s.label} delay={i * 0.05}>
+            <figure className="group overflow-hidden rounded-2xl border border-border bg-card transition-transform duration-300 hover:-translate-y-0.5">
+              <div className={`relative ${s.h} w-full bg-gradient-to-br from-muted to-card`}>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground/70">
+                    {s.label}
+                  </span>
+                </div>
+              </div>
+              <figcaption className="border-t border-border px-4 py-3 text-xs uppercase tracking-widest text-muted-foreground">
+                {s.caption}
+              </figcaption>
+            </figure>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LabTrophies() {
+  const items = [
+    { title: "State Championship 2023", desc: "U-19 squad — winners under structured S&C program." },
+    { title: "District League MVP", desc: "Top all-rounder coached through our power block." },
+    { title: "100+ Match-Ready Athletes", desc: "Cricketers prepped across formats & age groups." },
+    { title: "Zero-Injury Pre-Season", desc: "Full team completed pre-season with no soft-tissue injuries." },
+  ];
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <SectionTitle kicker="Achievements" title="WINNING CULTURE" />
+      </Reveal>
+      <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((it, i) => (
+          <Reveal key={it.title} delay={i * 0.06}>
+            <div className="h-full rounded-2xl border border-[var(--brand-saffron)]/40 bg-gradient-to-br from-[var(--brand-saffron)]/10 via-card to-card p-6 transition-transform duration-300 hover:-translate-y-0.5">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--brand-saffron)]/20">
+                <Trophy className="h-5 w-5 text-[var(--brand-saffron)]" />
+              </div>
+              <h3 className="mt-5 font-display text-xl tracking-wide">{it.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function LabCoachStrip() {
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 rounded-3xl border border-border bg-card p-6 sm:flex-row sm:p-8">
+          <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border border-border bg-muted sm:h-28 sm:w-28">
+            <img src={coachImg} alt="Coach Anupam Jain" loading="lazy" className="h-full w-full object-cover" />
+          </div>
+          <div className="flex-1 text-center sm:text-left">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--brand-teal)]">Led by</p>
+            <h3 className="mt-1 font-display text-3xl tracking-wide sm:text-4xl">
+              ANUPAM JAIN
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Certified S&C Coach · 10+ Years · 200+ Athletes trained across cricket, athletics,
+              and functional sport.
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2 sm:justify-start">
+              {["S&C Certified", "Yoga-Integrated", "Functional Training"].map((t) => (
+                <span key={t} className="rounded-full border border-border bg-muted/40 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+          <WaButton href={wa("Hi Coach! I'd like to know more about Elite Performance Lab training.")}>
+            Talk to Coach →
+          </WaButton>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function CoachingZone() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Plans />
+      <Poshak />
+      <WhyUs />
+      <Testimonials />
+      <ContactCTA />
+    </>
+  );
+}
+
+function LabZone() {
+  return (
+    <>
+      <LabHero />
+      <LabPillars />
+      <LabGallery />
+      <LabTrophies />
+      <LabCoachStrip />
+    </>
+  );
+}
+
 function Index() {
+  const [zone, setZone] = useState<Zone>("coaching");
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <ZoneSwitcher zone={zone} onChange={setZone} />
       <main>
-        <Hero />
-        <About />
-        <Plans />
-        <Poshak />
-        <WhyUs />
-        <Testimonials />
-        <ContactCTA />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={zone}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+          >
+            {zone === "coaching" ? <CoachingZone /> : <LabZone />}
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
       <FloatingWA />
