@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Check, Star, Dumbbell, Salad, MessageCircle, CalendarCheck,
   MapPin, Phone, Clock, Instagram, Target, Home as HomeIcon, BarChart3,
+  User, Trophy, ClipboardCheck, Settings, Zap, Activity, Crosshair,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { FloatingWA } from "@/components/site/FloatingWA";
