@@ -160,15 +160,6 @@ function Plans() {
       wa: wa("Hi! I want to enroll in THE CUT program (₹4999). Please guide me further."),
     },
     {
-      name: "EAPS",
-      sub: "Elite Athlete Performance System",
-      price: "₹4,999",
-      desc: "Performance-Focused Training for Cricketers & Athletes. Build strength, improve athleticism, and maximize on-field performance through structured strength & conditioning protocols.",
-      features: ["Athlete Assessment", "Customized Training", "Speed & Power Development", "Mobility & Recovery", "Sports-Specific Conditioning"],
-      cta: "Enroll in EAPS →",
-      wa: wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further."),
-    },
-    {
       name: "Custom Plan",
       price: "Contact for pricing",
       desc: "A 100% personalized plan built around your specific body, goals, and schedule.",
