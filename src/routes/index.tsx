@@ -682,17 +682,59 @@ function CoachingZone() {
   );
 }
 
+function LabPlan() {
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <SectionTitle kicker="Enroll" title="EAPS PROGRAM" sub="Elite Athlete Performance System — built for cricketers & competitive athletes." />
+      </Reveal>
+      <div className="mx-auto mt-12 max-w-md">
+        <Reveal>
+          <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--brand-teal)]/40 bg-card p-7 glow-teal-hover">
+            <span className="absolute right-5 top-5 rounded-full bg-[var(--brand-teal)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+              Athletes
+            </span>
+            <h3 className="font-display text-4xl tracking-wide sm:text-5xl">EAPS</h3>
+            <p className="mt-2 text-sm text-[var(--brand-teal)]">Elite Athlete Performance System</p>
+            <div className="mt-4 flex items-end gap-3">
+              <span className="font-display text-3xl text-primary">₹4,999</span>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Performance-Focused Training for Cricketers & Athletes. Build strength, improve athleticism, and maximize on-field performance through structured strength & conditioning protocols.
+            </p>
+            <ul className="mt-6 space-y-2.5">
+              {["Athlete Assessment", "Customized Training", "Speed & Power Development", "Mobility & Recovery", "Sports-Specific Conditioning"].map((f) => (
+                <li key={f} className="flex items-start gap-2 text-sm">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-wa)]" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <WaButton href={wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further.")} className="w-full">
+                Enroll in EAPS →
+              </WaButton>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function LabZone() {
   return (
     <>
       <LabHero />
       <LabPillars />
+      <LabPlan />
       <LabGallery />
       <LabTrophies />
       <LabCoachStrip />
     </>
   );
 }
+
 
 function Index() {
   const [zone, setZone] = useState<Zone>("coaching");
