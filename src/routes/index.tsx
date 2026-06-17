@@ -67,18 +67,18 @@ function Hero() {
         alt="Athlete training"
         width={1920}
         height={1080}
-        className="absolute inset-0 h-full w-full object-cover opacity-95"
+        className="absolute inset-0 h-full w-full object-cover object-top opacity-95"
       />
       <div className="absolute inset-0 gradient-hero" />
 
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40">
         <Reveal delay={0.1}>
-          <h1 className="font-display text-[3.5rem] leading-[0.9] tracking-wide sm:text-7xl md:text-8xl lg:text-[9.5rem]">
+          <h1 className="font-display text-[2.5rem] xs:text-[3rem] sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.9] tracking-wide">
             UNLOCK YOUR<br />PEAK PERFORMANCE.
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
-          <p className="mt-5 max-w-xl text-base text-[var(--brand-teal)] sm:text-lg md:text-xl">
+          <p className="mt-5 max-w-xl text-base text-zinc-300 sm:text-lg md:text-xl">
             Elite 1-on-1 Personal Coaching — Customized for You.
           </p>
         </Reveal>
