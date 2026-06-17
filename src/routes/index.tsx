@@ -238,7 +238,7 @@ function Plans() {
 function Poshak() {
   const products = [
     { name: "Sattu Power", img: sattuImg, desc: "High-protein roasted gram flour. Natural energy for athletes.", price: "Ask for Price" },
-    { name: "Protein Mix", img: proteinImg, desc: "Custom blend of natural protein sources.", price: "Ask for Price" },
+    { name: "Quinoa Flour", img: proteinImg, desc: "Nutrient-dense flour for clean carbs and complete protein.", price: "Ask for Price" },
     { name: "Energy Ladoo", img: ladooImg, desc: "Traditional protein-rich energy balls.", price: "Ask for Price" },
   ];
 
@@ -402,7 +402,7 @@ function ContactCTA() {
         <Reveal delay={0.3}>
           <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
-              { icon: MapPin, text: "MIG Colony, New Palasia, Indore, MP 452011" },
+              { icon: MapPin, text: "LIG Colony, New Palasia, Indore, MP 452011" },
               { icon: Phone, text: "+91 7489 414 311" },
               { icon: Clock, text: "Open: 8:00 AM – 8:00 PM" },
             ].map(({ icon: Icon, text }) => (
@@ -439,7 +439,7 @@ function Footer() {
             <span className="text-primary">1ON1</span> COACHING
           </div>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from MIG Colony, New Palasia, Indore.
+            Revolutionize Your Fitness Routine. Personal coaching & natural nutrition from LIG Colony, New Palasia, Indore.
           </p>
         </div>
         <div>
