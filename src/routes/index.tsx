@@ -541,7 +541,7 @@ function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => v
 
 function LabHero() {
   return (
-    <section className="relative min-h-[70svh] flex items-center justify-center overflow-hidden px-5 py-20 md:px-8 md:py-32">
+    <section className="relative min-h-[70svh] flex items-center justify-center overflow-hidden px-5 pt-40 pb-20 md:px-8 md:py-32">
       <img
         src={labHeroBg}
         alt="Elite sports training"
@@ -559,7 +559,7 @@ function LabHero() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className="font-display text-[3.5rem] leading-[0.95] tracking-wide sm:text-7xl md:text-8xl lg:text-9xl text-balance text-white">
+          <h1 className="font-display text-[2.5rem] xs:text-[3rem] sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] tracking-wide text-balance text-white">
             TRAIN FOR THE <span className="text-lime-400">WIN</span>
           </h1>
         </Reveal>
