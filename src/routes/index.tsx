@@ -237,9 +237,11 @@ function Plans() {
 
 function Poshak() {
   const products = [
-    { name: "Sattu Power", img: sattuImg, desc: "High-protein roasted gram flour. Natural energy for athletes.", price: "Ask for Price" },
-    { name: "Quinoa Flour", img: proteinImg, desc: "Nutrient-dense flour for clean carbs and complete protein.", price: "Ask for Price" },
-    { name: "Energy Ladoo", img: ladooImg, desc: "Traditional protein-rich energy balls.", price: "Ask for Price" },
+    { name: "Sattu Power", img: sattuImg, desc: "Low in glycemic index, improves digestion and high in fibre.", price: "Ask for Price" },
+    { name: "Quinoa Flour", img: proteinImg, desc: "Gluten free, rich in antioxidants and contains all 9 essential amino acids. Manages hormonal balance, pregnancy friendly, supports skin and hair health.", price: "Ask for Price" },
+    { name: "Energy Ladoo", img: ladooImg, desc: "Improves immunity and muscle strength and increases alertness.", price: "Ask for Price" },
+    { name: "Ragi Flour", img: sattuImg, desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.", price: "Ask for Price" },
+    { name: "Kodu (Millet)", img: ladooImg, desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.", price: "Ask for Price" },
   ];
 
   return (
