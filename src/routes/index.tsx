@@ -160,15 +160,6 @@ function Plans() {
       wa: wa("Hi! I want to enroll in THE CUT program (₹4999). Please guide me further."),
     },
     {
-      name: "EAPS",
-      sub: "Elite Athlete Performance System",
-      price: "₹4,999",
-      desc: "Performance-Focused Training for Cricketers & Athletes. Build strength, improve athleticism, and maximize on-field performance through structured strength & conditioning protocols.",
-      features: ["Athlete Assessment", "Customized Training", "Speed & Power Development", "Mobility & Recovery", "Sports-Specific Conditioning"],
-      cta: "Enroll in EAPS →",
-      wa: wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further."),
-    },
-    {
       name: "Custom Plan",
       price: "Contact for pricing",
       desc: "A 100% personalized plan built around your specific body, goals, and schedule.",
@@ -210,7 +201,7 @@ function Plans() {
                   <span className="font-display text-3xl text-primary">{p.price}</span>
                 </div>
               )}
-              {"sub" in p && p.sub && <p className="mt-4 text-sm text-[var(--brand-teal)]">{p.sub}</p>}
+              
               {"desc" in p && p.desc && <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>}
 
               <ul className="mt-6 space-y-2.5">
@@ -476,13 +467,13 @@ function Footer() {
 type Zone = "coaching" | "lab";
 
 function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => void }) {
-  const tabs: { id: Zone; icon: typeof User; label: string }[] = [
-    { id: "coaching", icon: User, label: "1-on-1 Coaching" },
-    { id: "lab", icon: Trophy, label: "Elite Performance Lab" },
+  const tabs: { id: Zone; icon: typeof User; label: string; shortLabel: string }[] = [
+    { id: "coaching", icon: User, label: "1-on-1 Coaching", shortLabel: "1-on-1" },
+    { id: "lab", icon: Trophy, label: "Elite Performance Lab", shortLabel: "Elite Lab" },
   ];
   return (
     <div className="sticky top-[64px] z-40 border-b border-border bg-background/85 backdrop-blur-xl md:top-[76px]">
-      <div className="mx-auto flex max-w-7xl justify-center px-4 py-3 md:px-8">
+      <div className="mx-auto flex max-w-7xl justify-center px-3 py-3 md:px-8">
         <div className="relative inline-flex w-full max-w-xl items-center rounded-full border border-border bg-card/60 p-1 sm:w-auto">
           {tabs.map((t) => {
             const active = zone === t.id;
@@ -490,7 +481,7 @@ function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => v
               <button
                 key={t.id}
                 onClick={() => onChange(t.id)}
-                className={`relative flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-[11px] font-semibold uppercase tracking-wider transition-colors sm:px-6 sm:text-xs ${
+                className={`relative flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wider transition-colors sm:gap-2 sm:px-6 sm:text-xs ${
                   active ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -501,8 +492,10 @@ function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => v
                     transition={{ type: "spring", stiffness: 380, damping: 32 }}
                   />
                 )}
-                <t.icon className="relative z-10 h-4 w-4" />
-                <span className="relative z-10 whitespace-nowrap">{t.label}</span>
+                <t.icon className="relative z-10 h-4 w-4 shrink-0" />
+                <span className="relative z-10 whitespace-nowrap sm:hidden">{t.shortLabel}</span>
+                <span className="relative z-10 hidden whitespace-nowrap sm:inline">{t.label}</span>
+
               </button>
             );
           })}
@@ -689,17 +682,59 @@ function CoachingZone() {
   );
 }
 
+function LabPlan() {
+  return (
+    <section className="px-5 py-20 md:px-8 md:py-28">
+      <Reveal>
+        <SectionTitle kicker="Enroll" title="EAPS PROGRAM" sub="Elite Athlete Performance System — built for cricketers & competitive athletes." />
+      </Reveal>
+      <div className="mx-auto mt-12 max-w-md">
+        <Reveal>
+          <div className="relative h-full overflow-hidden rounded-2xl border border-[var(--brand-teal)]/40 bg-card p-7 glow-teal-hover">
+            <span className="absolute right-5 top-5 rounded-full bg-[var(--brand-teal)] px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
+              Athletes
+            </span>
+            <h3 className="font-display text-4xl tracking-wide sm:text-5xl">EAPS</h3>
+            <p className="mt-2 text-sm text-[var(--brand-teal)]">Elite Athlete Performance System</p>
+            <div className="mt-4 flex items-end gap-3">
+              <span className="font-display text-3xl text-primary">₹4,999</span>
+            </div>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Performance-Focused Training for Cricketers & Athletes. Build strength, improve athleticism, and maximize on-field performance through structured strength & conditioning protocols.
+            </p>
+            <ul className="mt-6 space-y-2.5">
+              {["Athlete Assessment", "Customized Training", "Speed & Power Development", "Mobility & Recovery", "Sports-Specific Conditioning"].map((f) => (
+                <li key={f} className="flex items-start gap-2 text-sm">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--brand-wa)]" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
+              <WaButton href={wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further.")} className="w-full">
+                Enroll in EAPS →
+              </WaButton>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function LabZone() {
   return (
     <>
       <LabHero />
       <LabPillars />
+      <LabPlan />
       <LabGallery />
       <LabTrophies />
       <LabCoachStrip />
     </>
   );
 }
+
 
 function Index() {
   const [zone, setZone] = useState<Zone>("coaching");
