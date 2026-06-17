@@ -128,7 +128,7 @@ function About() {
             Train Smart.<br />Perform Elite.
           </h2>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Anupam Jain is a Performance Coach specializing in Strength & Conditioning, Functional
+            Anupam Jain is a Performance Coach Specializing in Strength & Conditioning, Functional
             Fitness, and Yoga-integrated training. Through <span className="text-foreground font-medium">Elite Performance Lab</span> &
             <span className="text-foreground font-medium"> 1on1Coaching</span>, he helps athletes and individuals improve strength,
             performance, and overall fitness with a scientific and personalized approach.
