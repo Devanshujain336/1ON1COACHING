@@ -15,6 +15,8 @@ import coachImg from "@/assets/coach.jpg";
 import sattuImg from "@/assets/sattu.jpg";
 import proteinImg from "@/assets/protein.jpg";
 import ladooImg from "@/assets/ladoo.jpg";
+import ragiImg from "@/assets/ragi.jpg";
+import koduImg from "@/assets/kodu.jpg";
 
 export const Route = createFileRoute("/")({ component: Index });
 
@@ -240,8 +242,8 @@ function Poshak() {
     { name: "Sattu Power", img: sattuImg, desc: "Low in glycemic index, improves digestion and high in fibre.", price: "Ask for Price" },
     { name: "Quinoa Flour", img: proteinImg, desc: "Gluten free, rich in antioxidants and contains all 9 essential amino acids. Manages hormonal balance, pregnancy friendly, supports skin and hair health.", price: "Ask for Price" },
     { name: "Energy Ladoo", img: ladooImg, desc: "Improves immunity and muscle strength and increases alertness.", price: "Ask for Price" },
-    { name: "Ragi Flour", img: sattuImg, desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.", price: "Ask for Price" },
-    { name: "Kodu (Millet)", img: ladooImg, desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.", price: "Ask for Price" },
+    { name: "Ragi Flour", img: ragiImg, desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.", price: "Ask for Price" },
+    { name: "Kodu (Millet)", img: koduImg, desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.", price: "Ask for Price" },
   ];
 
   return (
