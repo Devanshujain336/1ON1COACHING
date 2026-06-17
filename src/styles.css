@@ -117,8 +117,7 @@
   }
   .text-balance { text-wrap: balance; }
   .gradient-hero {
-    background: radial-gradient(120% 80% at 50% 0%, color-mix(in oklab, var(--brand-teal) 25%, transparent) 0%, transparent 60%),
-                linear-gradient(180deg, color-mix(in oklab, var(--brand-black) 40%, transparent) 0%, var(--brand-black) 85%);
+    background: linear-gradient(180deg, transparent 0%, transparent 35%, var(--brand-black) 95%);
   }
   @keyframes pulse-glow {
     0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand-wa) 50%, transparent); }

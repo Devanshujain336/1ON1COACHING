@@ -3,15 +3,19 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#coaching", label: "Coaching" },
-  { href: "#plans", label: "Plans" },
-  { href: "#poshak", label: "Poshak Store" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "HOME" },
+  { href: "#coaching", label: "COACHING" },
+  { href: "#plans", label: "PLANS" },
+  { href: "#poshak", label: "POSHAK STORE" },
+  { href: "#about", label: "ABOUT" },
+  { href: "#contact", label: "CONTACT" },
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  zone?: "coaching" | "lab";
+}
+
+export function Navbar({ zone = "coaching" }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -22,22 +26,34 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isDarkTheme = zone === "lab";
+
   return (
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "backdrop-blur-xl bg-background/75 border-b border-border"
-            : "bg-transparent"
+            ? "backdrop-blur-xl bg-background/80 border-b border-border text-foreground"
+            : isDarkTheme
+              ? "bg-black/20 backdrop-blur-md border-b border-white/5 text-white"
+              : "bg-white/40 backdrop-blur-md border-b border-black/5 text-slate-950"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8 md:py-4">
           <a href="#home" className="flex flex-col leading-none">
             <span className="font-display text-2xl md:text-3xl tracking-wider">
-              <span className="text-primary">1ON1</span>{" "}
-              <span className="text-foreground">COACHING</span>
+              <span className="text-primary">1ON1</span>
+              <span className={scrolled ? "text-foreground" : isDarkTheme ? "text-white" : "text-slate-950"}>
+                COACHING
+              </span>
             </span>
-            <span className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-muted-foreground mt-0.5">
+            <span className={`text-[10px] md:text-[11px] uppercase tracking-[0.18em] mt-0.5 ${
+              scrolled
+                ? "text-muted-foreground"
+                : isDarkTheme
+                  ? "text-slate-300/80"
+                  : "text-slate-800/85"
+            }`}>
               Revolutionize Your Fitness Routine
             </span>
           </a>
@@ -47,7 +63,13 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className={`text-sm font-semibold tracking-wider transition-colors ${
+                  scrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : isDarkTheme
+                      ? "text-slate-200 hover:text-white"
+                      : "text-slate-800 hover:text-slate-950"
+                }`}
               >
                 {l.label}
               </a>
@@ -55,7 +77,9 @@ export function Navbar() {
           </nav>
 
           <button
-            className="lg:hidden rounded-full p-2 text-foreground"
+            className={`lg:hidden rounded-full p-2 transition-colors ${
+              scrolled ? "text-foreground" : isDarkTheme ? "text-white" : "text-slate-950"
+            }`}
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -74,7 +98,7 @@ export function Navbar() {
           >
             <div className="flex items-center justify-between px-5 py-3">
               <span className="font-display text-2xl tracking-wider">
-                <span className="text-primary">1ON1</span> COACHING
+                <span className="text-primary">1ON1</span>COACHING
               </span>
               <button
                 onClick={() => setOpen(false)}
@@ -117,3 +141,4 @@ export function Navbar() {
     </>
   );
 }
+

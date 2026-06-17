@@ -3,7 +3,7 @@ import { wa } from "@/lib/wa";
 export function FloatingWA() {
   return (
     <a
-      href={wa("Hi! I'm interested in 1on1 Coaching. Please share more details.")}
+      href={wa("Hi! I'm interested in 1on1Coaching. Please share more details.")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
