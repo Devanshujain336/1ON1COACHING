@@ -201,7 +201,7 @@ function Plans() {
                   <span className="font-display text-3xl text-primary">{p.price}</span>
                 </div>
               )}
-              {"sub" in p && p.sub && <p className="mt-4 text-sm text-[var(--brand-teal)]">{p.sub}</p>}
+              
               {"desc" in p && p.desc && <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>}
 
               <ul className="mt-6 space-y-2.5">
