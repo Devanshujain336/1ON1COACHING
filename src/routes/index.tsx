@@ -470,6 +470,29 @@ function Footer() {
       </div>
       <div className="mx-auto mt-10 max-w-7xl border-t border-border pt-6 text-center text-xs text-muted-foreground">
         © 2025 1ON1Coaching. All rights reserved.
+        <div className="mt-4 flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground/60">
+          <span>💻</span>
+          <span>
+            Website designed & developed by{" "}
+            <a
+              href="https://wa.me/919301601955?text=Hi%20Devanshu!%20I%20saw%20the%201on1Coaching%20website%20you%20built.%20I%20need%20a%20website%20for%20my%20business%20too."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-muted-foreground/80 underline decoration-dotted underline-offset-2 hover:text-primary transition-colors"
+            >
+              Devanshu Jain
+            </a>
+            {" "}— Need a website?{" "}
+            <a
+              href="https://wa.me/919301601955?text=Hi%20Devanshu!%20I%20need%20a%20professional%20website%20built%20for%20my%20business.%20Can%20you%20share%20pricing%20and%20details?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary/70 hover:text-primary transition-colors"
+            >
+              Let's talk →
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );
