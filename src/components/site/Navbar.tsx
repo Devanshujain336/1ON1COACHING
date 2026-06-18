@@ -43,17 +43,23 @@ export function Navbar({ zone = "coaching" }: NavbarProps) {
           <a href="#home" className="flex flex-col leading-none">
             <span className="font-display text-2xl md:text-3xl tracking-wider">
               <span className="text-primary">1ON1</span>
-              <span className={scrolled ? "text-foreground" : isDarkTheme ? "text-white" : "text-slate-950"}>
+              <span
+                className={
+                  scrolled ? "text-foreground" : isDarkTheme ? "text-white" : "text-slate-950"
+                }
+              >
                 COACHING
               </span>
             </span>
-            <span className={`text-[10px] md:text-[11px] uppercase tracking-[0.18em] mt-0.5 ${
-              scrolled
-                ? "text-muted-foreground"
-                : isDarkTheme
-                  ? "text-slate-300/80"
-                  : "text-slate-800/85"
-            }`}>
+            <span
+              className={`text-[10px] md:text-[11px] uppercase tracking-[0.18em] mt-0.5 ${
+                scrolled
+                  ? "text-muted-foreground"
+                  : isDarkTheme
+                    ? "text-slate-300/80"
+                    : "text-slate-800/85"
+              }`}
+            >
               Revolutionize Your Fitness Routine
             </span>
           </a>
@@ -141,4 +147,3 @@ export function Navbar({ zone = "coaching" }: NavbarProps) {
     </>
   );
 }
-
