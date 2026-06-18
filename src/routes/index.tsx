@@ -2,9 +2,26 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Check, Star, Dumbbell, Salad, MessageCircle, CalendarCheck,
-  MapPin, Phone, Clock, Instagram, Target, Home as HomeIcon, BarChart3,
-  User, Trophy, ClipboardCheck, Settings, Zap, Activity, Crosshair,
+  Check,
+  Star,
+  Dumbbell,
+  Salad,
+  MessageCircle,
+  CalendarCheck,
+  MapPin,
+  Phone,
+  Clock,
+  Instagram,
+  Target,
+  Home as HomeIcon,
+  BarChart3,
+  User,
+  Trophy,
+  ClipboardCheck,
+  Settings,
+  Zap,
+  Activity,
+  Crosshair,
 } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { FloatingWA } from "@/components/site/FloatingWA";
@@ -28,8 +45,16 @@ import koduImg from "@/assets/kodu.jpg";
 export const Route = createFileRoute("/")({ component: Index });
 
 function WaButton({
-  href, children, variant = "wa", className = "",
-}: { href: string; children: React.ReactNode; variant?: "wa" | "ghost"; className?: string }) {
+  href,
+  children,
+  variant = "wa",
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "wa" | "ghost";
+  className?: string;
+}) {
   const base =
     "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all";
   const styles =
@@ -37,7 +62,12 @@ function WaButton({
       ? "bg-[var(--brand-wa)] text-black glow-wa"
       : "border border-foreground/30 text-foreground hover:bg-foreground/10";
   return (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className={`${base} ${styles} ${className}`}>
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel="noopener noreferrer"
+      className={`${base} ${styles} ${className}`}
+    >
       {children}
     </a>
   );
@@ -74,7 +104,9 @@ function Hero() {
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40">
         <Reveal delay={0.1}>
           <h1 className="font-display text-[2.5rem] xs:text-[3rem] sm:text-7xl md:text-8xl lg:text-[9.5rem] leading-[0.9] tracking-wide">
-            UNLOCK YOUR<br />PEAK PERFORMANCE.
+            UNLOCK YOUR
+            <br />
+            PEAK PERFORMANCE.
           </h1>
         </Reveal>
         <Reveal delay={0.2}>
@@ -87,13 +119,18 @@ function Hero() {
             <WaButton href={wa("Hi! I'm interested in 1on1Coaching. Please share more details.")}>
               Start Coaching →
             </WaButton>
-            <WaButton href="#plans" variant="ghost">View Plans</WaButton>
+            <WaButton href="#plans" variant="ghost">
+              View Plans
+            </WaButton>
           </div>
         </Reveal>
         <Reveal delay={0.4}>
           <div className="mt-10 flex flex-wrap gap-3">
             {["500+ Clients", "5★ Rated", "100% Personalized"].map((s) => (
-              <span key={s} className="glass rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider">
+              <span
+                key={s}
+                className="glass rounded-full px-4 py-2 text-xs font-medium uppercase tracking-wider"
+              >
                 {s}
               </span>
             ))}
@@ -120,7 +157,8 @@ function About() {
               src={coachImg}
               alt="Anupam Jain — Performance Coach"
               loading="lazy"
-              width={1024} height={1280}
+              width={1024}
+              height={1280}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent p-6">
@@ -132,15 +170,21 @@ function About() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">Meet Your Coach</p>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            Meet Your Coach
+          </p>
           <h2 className="font-display text-5xl leading-none tracking-wide sm:text-6xl md:text-7xl">
-            Train Smart.<br />Perform Elite.
+            Train Smart.
+            <br />
+            Perform Elite.
           </h2>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
             Anupam Jain is a Performance Coach Specializing in Strength & Conditioning, Functional
-            Fitness, and Yoga-integrated training. Through <span className="text-foreground font-medium">Elite Performance Lab</span> &
-            <span className="text-foreground font-medium"> 1on1Coaching</span>, he helps athletes and individuals improve strength,
-            performance, and overall fitness with a scientific and personalized approach.
+            Fitness, and Yoga-integrated training. Through{" "}
+            <span className="text-foreground font-medium">Elite Performance Lab</span> &
+            <span className="text-foreground font-medium"> 1on1Coaching</span>, he helps athletes
+            and individuals improve strength, performance, and overall fitness with a scientific and
+            personalized approach.
           </p>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {items.map(({ icon: Icon, label }) => (
@@ -164,7 +208,13 @@ function Plans() {
       oldPrice: "₹5,999",
       price: "₹4,999",
       desc: "A thorough exercise routine designed to lose extra weight and gain lean muscle mass.",
-      features: ["Custom Workout Plan", "Personalized Meal Plan", "Cardio Routine", "Weekly Check-ins", "Direct 1-1 WhatsApp Support"],
+      features: [
+        "Custom Workout Plan",
+        "Personalized Meal Plan",
+        "Cardio Routine",
+        "Weekly Check-ins",
+        "Direct 1-1 WhatsApp Support",
+      ],
       cta: "Enroll in The Cut →",
       wa: wa("Hi! I want to enroll in THE CUT program (₹4999). Please guide me further."),
     },
@@ -176,7 +226,6 @@ function Plans() {
       cta: "Get Custom Plan →",
       wa: wa("Hi! I'd like to discuss a Custom Plan tailored to my goals. Please share details."),
     },
-
   ] as const;
 
   const pills = ["Women's Health", "Child Nutrition", "Sports Nutrition", "Group Classes"];
@@ -194,24 +243,32 @@ function Plans() {
       <div className="mx-auto mt-14 grid max-w-7xl gap-6 md:grid-cols-3">
         {plans.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
-            <div className={`relative h-full overflow-hidden rounded-2xl border bg-card p-7 glow-teal-hover ${"featured" in p && p.featured ? "border-primary/40" : "border-border"}`}>
+            <div
+              className={`relative h-full overflow-hidden rounded-2xl border bg-card p-7 glow-teal-hover ${"featured" in p && p.featured ? "border-primary/40" : "border-border"}`}
+            >
               {"featured" in p && p.featured && (
                 <span className="absolute right-5 top-5 rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary-foreground">
                   Most Popular
                 </span>
               )}
-              <h3 className="font-display text-4xl tracking-wide sm:text-5xl">{p.name.toUpperCase()}</h3>
+              <h3 className="font-display text-4xl tracking-wide sm:text-5xl">
+                {p.name.toUpperCase()}
+              </h3>
 
               {"price" in p && p.price && (
                 <div className="mt-4 flex items-end gap-3">
                   {"oldPrice" in p && p.oldPrice && (
-                    <span className="text-base text-muted-foreground line-through">{p.oldPrice}</span>
+                    <span className="text-base text-muted-foreground line-through">
+                      {p.oldPrice}
+                    </span>
                   )}
                   <span className="font-display text-3xl text-primary">{p.price}</span>
                 </div>
               )}
-              
-              {"desc" in p && p.desc && <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>}
+
+              {"desc" in p && p.desc && (
+                <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
+              )}
 
               <ul className="mt-6 space-y-2.5">
                 {p.features.map((f) => (
@@ -223,9 +280,10 @@ function Plans() {
               </ul>
 
               <div className="mt-8">
-                <WaButton href={p.wa} className="w-full">{p.cta}</WaButton>
+                <WaButton href={p.wa} className="w-full">
+                  {p.cta}
+                </WaButton>
               </div>
-
             </div>
           </Reveal>
         ))}
@@ -234,7 +292,10 @@ function Plans() {
       <Reveal delay={0.1}>
         <div className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-2">
           {pills.map((t) => (
-            <span key={t} className="rounded-full border border-border bg-muted/40 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <span
+              key={t}
+              className="rounded-full border border-border bg-muted/40 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            >
               {t}
             </span>
           ))}
@@ -246,11 +307,36 @@ function Plans() {
 
 function Poshak() {
   const products = [
-    { name: "Sattu Power", img: sattuImg, desc: "Low in glycemic index, improves digestion and high in fibre.", price: "Ask for Price" },
-    { name: "Quinoa Flour", img: proteinImg, desc: "Gluten free, rich in antioxidants and contains all 9 essential amino acids. Manages hormonal balance, pregnancy friendly, supports skin and hair health.", price: "Ask for Price" },
-    { name: "Energy Ladoo", img: ladooImg, desc: "Improves immunity and muscle strength and increases alertness.", price: "Ask for Price" },
-    { name: "Ragi Flour", img: ragiImg, desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.", price: "Ask for Price" },
-    { name: "Kodu (Millet)", img: koduImg, desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.", price: "Ask for Price" },
+    {
+      name: "Sattu Power",
+      img: sattuImg,
+      desc: "Low in glycemic index, improves digestion and high in fibre.",
+      price: "Ask for Price",
+    },
+    {
+      name: "Quinoa Flour",
+      img: proteinImg,
+      desc: "Gluten free, rich in antioxidants and contains all 9 essential amino acids. Manages hormonal balance, pregnancy friendly, supports skin and hair health.",
+      price: "Ask for Price",
+    },
+    {
+      name: "Energy Ladoo",
+      img: ladooImg,
+      desc: "Improves immunity and muscle strength and increases alertness.",
+      price: "Ask for Price",
+    },
+    {
+      name: "Ragi Flour",
+      img: ragiImg,
+      desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.",
+      price: "Ask for Price",
+    },
+    {
+      name: "Kodu (Millet)",
+      img: koduImg,
+      desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.",
+      price: "Ask for Price",
+    },
   ];
 
   return (
@@ -284,17 +370,25 @@ function Poshak() {
                   src={p.img}
                   alt={p.name}
                   loading="lazy"
-                  width={800} height={800}
+                  width={800}
+                  height={800}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-4 md:p-5">
-                <h3 className="font-display text-xl tracking-wide md:text-2xl">{p.name.toUpperCase()}</h3>
+                <h3 className="font-display text-xl tracking-wide md:text-2xl">
+                  {p.name.toUpperCase()}
+                </h3>
                 <p className="mt-1 text-xs text-muted-foreground md:text-sm">{p.desc}</p>
-                <p className="mt-3 text-xs uppercase tracking-widest text-[var(--brand-saffron)]">{p.price}</p>
+                <p className="mt-3 text-xs uppercase tracking-widest text-[var(--brand-saffron)]">
+                  {p.price}
+                </p>
                 <a
-                  href={wa(`Hi! I want to order ${p.name} from Poshak. Please share details and pricing.`)}
-                  target="_blank" rel="noopener noreferrer"
+                  href={wa(
+                    `Hi! I want to order ${p.name} from Poshak. Please share details and pricing.`,
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand-wa)] px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-black glow-wa"
                 >
                   Order on WhatsApp →
@@ -357,21 +451,38 @@ function WhyUs() {
 
 function Testimonials() {
   const items = [
-    { quote: "Coach changed my whole approach. Lost the weight, kept it off, gained real strength.", name: "Rahul S.", tag: "Lost 12kg in 3 months" },
-    { quote: "The personalized plan made all the difference. Felt heard, felt guided. Worth every rupee.", name: "Priya M.", tag: "Lean & toned in 4 months" },
-    { quote: "Direct WhatsApp support is a game-changer. Coach is always there when I need a push.", name: "Aman K.", tag: "Gained 8kg lean muscle" },
+    {
+      quote: "Coach changed my whole approach. Lost the weight, kept it off, gained real strength.",
+      name: "Rahul S.",
+      tag: "Lost 12kg in 3 months",
+    },
+    {
+      quote:
+        "The personalized plan made all the difference. Felt heard, felt guided. Worth every rupee.",
+      name: "Priya M.",
+      tag: "Lean & toned in 4 months",
+    },
+    {
+      quote: "Direct WhatsApp support is a game-changer. Coach is always there when I need a push.",
+      name: "Aman K.",
+      tag: "Gained 8kg lean muscle",
+    },
   ];
   return (
     <section className="relative px-0 py-24 md:py-32">
       <div className="px-5 md:px-8">
-        <Reveal><SectionTitle title="REAL PEOPLE. REAL RESULTS." /></Reveal>
+        <Reveal>
+          <SectionTitle title="REAL PEOPLE. REAL RESULTS." />
+        </Reveal>
       </div>
       <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:mx-auto md:max-w-7xl md:grid md:grid-cols-3 md:overflow-visible md:px-8">
         {items.map((t, i) => (
           <Reveal key={t.name} delay={i * 0.08}>
             <div className="w-[85vw] shrink-0 snap-center rounded-2xl border border-border bg-card p-6 md:w-auto">
               <div className="flex gap-0.5 text-primary">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
               </div>
               <p className="mt-4 text-base leading-relaxed">"{t.quote}"</p>
               <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
@@ -405,7 +516,10 @@ function ContactCTA() {
         </Reveal>
         <Reveal delay={0.2}>
           <div className="mt-8 flex justify-center">
-            <WaButton href={wa("Hi Coach! I'd like to start my fitness journey. Please share next steps.")} className="px-8 py-4 text-base">
+            <WaButton
+              href={wa("Hi Coach! I'd like to start my fitness journey. Please share next steps.")}
+              className="px-8 py-4 text-base"
+            >
               Chat with Your Coach →
             </WaButton>
           </div>
@@ -426,12 +540,20 @@ function ContactCTA() {
         </Reveal>
         <Reveal delay={0.4}>
           <div className="mt-8 flex justify-center gap-3">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-               className="flex h-11 w-11 items-center justify-center rounded-full border border-border hover:bg-foreground/10">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-border hover:bg-foreground/10"
+            >
               <Instagram className="h-5 w-5" />
             </a>
-            <a href={wa("Hi!")} target="_blank" rel="noopener noreferrer"
-               className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--brand-wa)] text-black glow-wa">
+            <a
+              href={wa("Hi!")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--brand-wa)] text-black glow-wa"
+            >
               <MessageCircle className="h-5 w-5" />
             </a>
           </div>
@@ -450,19 +572,33 @@ function Footer() {
             <span className="text-primary">1ON1</span>COACHING
           </div>
           <p className="mt-2 max-w-xs text-sm text-muted-foreground">
-            Revolutionize Your Fitness Routine. Personal Coaching & Natural Nutrition From LIG Colony, New Palasia, Indore.
+            Revolutionize Your Fitness Routine. Personal Coaching & Natural Nutrition From LIG
+            Colony, New Palasia, Indore.
           </p>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Quick Links</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Quick Links
+          </p>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
-            {[["Coaching", "#coaching"], ["Plans", "#plans"], ["Poshak Store", "#poshak"], ["Contact", "#contact"]].map(([l, h]) => (
-              <li key={h}><a href={h} className="hover:text-primary">{l}</a></li>
+            {[
+              ["Coaching", "#coaching"],
+              ["Plans", "#plans"],
+              ["Poshak Store", "#poshak"],
+              ["Contact", "#contact"],
+            ].map(([l, h]) => (
+              <li key={h}>
+                <a href={h} className="hover:text-primary">
+                  {l}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Get Started</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            Get Started
+          </p>
           <div className="mt-3">
             <WaButton href={wa("Hi! I'm interested in 1on1Coaching.")}>WhatsApp Now →</WaButton>
           </div>
@@ -493,17 +629,19 @@ function ZoneSwitcher({ zone, onChange }: { zone: Zone; onChange: (z: Zone) => v
   ];
 
   return (
-    <div className={`z-40 transition-all duration-300 ${
-      scrolled
-        ? "fixed top-[64px] md:top-[76px] left-0 right-0 border-b border-border bg-background/85 backdrop-blur-xl"
-        : "absolute top-[64px] md:top-[76px] left-0 right-0 border-b border-black/5 bg-white/10 backdrop-blur-md"
-    }`}>
+    <div
+      className={`z-40 transition-all duration-300 ${
+        scrolled
+          ? "fixed top-[64px] md:top-[76px] left-0 right-0 border-b border-border bg-background/85 backdrop-blur-xl"
+          : "absolute top-[64px] md:top-[76px] left-0 right-0 border-b border-black/5 bg-white/10 backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl justify-center px-3 py-3 md:px-8">
-        <div className={`relative inline-flex w-full max-w-xl items-center rounded-full border p-1 sm:w-auto transition-all ${
-          scrolled
-            ? "border-border bg-card/60"
-            : "border-black/10 bg-white/40"
-        }`}>
+        <div
+          className={`relative inline-flex w-full max-w-xl items-center rounded-full border p-1 sm:w-auto transition-all ${
+            scrolled ? "border-border bg-card/60" : "border-black/10 bg-white/40"
+          }`}
+        >
           {tabs.map((t) => {
             const active = zone === t.id;
             return (
@@ -548,7 +686,7 @@ function LabHero() {
         className="absolute inset-0 h-full w-full object-cover opacity-25 scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-background/95 to-background" />
-      
+
       {/* Subtle sports grid overlay */}
       <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:32px_32px]" />
 
@@ -565,7 +703,8 @@ function LabHero() {
         </Reveal>
         <Reveal delay={0.2}>
           <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300 sm:text-lg">
-            High-performance strength, speed, and conditioning protocols engineered specifically for cricketers and competitive team athletes.
+            High-performance strength, speed, and conditioning protocols engineered specifically for
+            cricketers and competitive team athletes.
           </p>
         </Reveal>
         <Reveal delay={0.3}>
@@ -587,11 +726,31 @@ function LabHero() {
 
 function LabPillars() {
   const items = [
-    { icon: ClipboardCheck, title: "Athlete Assessment", desc: "Baseline Testing Across Speed, Force Production, Mobility & Capacity." },
-    { icon: Settings, title: "Customized S&C", desc: "Training Blocks Structured Around Your Sport, Position, And Season." },
-    { icon: Zap, title: "Speed & Power", desc: "Linear Speed Mechanics, Change-Of-Direction, And Vertical Power." },
-    { icon: Activity, title: "Mobility & Prehab", desc: "Bulletproofing Joints, Fixing Imbalances, And Optimizing Recovery." },
-    { icon: Crosshair, title: "Cricket Conditioning", desc: "Rotational Power, Throwing Capacity, And High-Intensity Match Fitness." },
+    {
+      icon: ClipboardCheck,
+      title: "Athlete Assessment",
+      desc: "Baseline Testing Across Speed, Force Production, Mobility & Capacity.",
+    },
+    {
+      icon: Settings,
+      title: "Customized S&C",
+      desc: "Training Blocks Structured Around Your Sport, Position, And Season.",
+    },
+    {
+      icon: Zap,
+      title: "Speed & Power",
+      desc: "Linear Speed Mechanics, Change-Of-Direction, And Vertical Power.",
+    },
+    {
+      icon: Activity,
+      title: "Mobility & Prehab",
+      desc: "Bulletproofing Joints, Fixing Imbalances, And Optimizing Recovery.",
+    },
+    {
+      icon: Crosshair,
+      title: "Cricket Conditioning",
+      desc: "Rotational Power, Throwing Capacity, And High-Intensity Match Fitness.",
+    },
   ];
   return (
     <section className="relative px-5 py-20 md:px-8 md:py-28 bg-gradient-to-b from-background via-slate-950/40 to-background">
@@ -612,7 +771,9 @@ function LabPillars() {
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-lime-400/10 transition-colors group-hover:bg-lime-400/20">
                 <Icon className="h-6 w-6 text-lime-400" />
               </div>
-              <h3 className="mt-5 font-display text-2xl tracking-wide text-white group-hover:text-lime-400 transition-colors">{title}</h3>
+              <h3 className="mt-5 font-display text-2xl tracking-wide text-white group-hover:text-lime-400 transition-colors">
+                {title}
+              </h3>
               <p className="mt-2 text-sm text-slate-400 leading-relaxed">{desc}</p>
             </div>
           </Reveal>
@@ -638,7 +799,7 @@ function LabPlan() {
           </p>
         </div>
       </Reveal>
-      
+
       <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-12 items-stretch">
         {/* Left Column: Visual Athlete Card */}
         <div className="lg:col-span-5 hidden lg:block">
@@ -655,7 +816,8 @@ function LabPlan() {
                   In the Lab
                 </span>
                 <p className="text-xl font-display tracking-wide text-white leading-tight">
-                  "S&C is not about just lifting weights, it's about building robustness for the 40th over."
+                  "S&C is not about just lifting weights, it's about building robustness for the
+                  40th over."
                 </p>
                 <div className="mt-3 flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-lime-400 animate-pulse" />
@@ -676,29 +838,40 @@ function LabPlan() {
                 Featured Program
               </span>
               <h3 className="font-display text-5xl tracking-wide text-white">EAPS</h3>
-              <p className="mt-2 text-sm text-lime-400 font-semibold tracking-wider uppercase">Elite Athlete Performance System</p>
-              
+              <p className="mt-2 text-sm text-lime-400 font-semibold tracking-wider uppercase">
+                Elite Athlete Performance System
+              </p>
+
               <div className="mt-6 flex items-end gap-3 border-b border-border pb-6">
                 <span className="font-display text-5xl text-white">₹4,999</span>
                 <span className="text-sm text-slate-400 mb-1">/ month</span>
               </div>
-              
+
               <p className="mt-6 text-sm text-slate-400 leading-relaxed">
-                Unlock professional-grade physical prep. Workouts built specifically for batting speed, bowling durability, and explosive sprinting capacity on the field.
+                Unlock professional-grade physical prep. Workouts built specifically for batting
+                speed, bowling durability, and explosive sprinting capacity on the field.
               </p>
-              
+
               <ul className="mt-6 space-y-3">
-                {["Full Athletic Bio-Assessment", "Customized Rotational & Core Program", "Field Agility & Sprint Mechanics", "Cricket-First Shoulder & Knee Prehab", "Direct Support & Progress Reviews"].map((f) => (
+                {[
+                  "Full Athletic Bio-Assessment",
+                  "Customized Rotational & Core Program",
+                  "Field Agility & Sprint Mechanics",
+                  "Cricket-First Shoulder & Knee Prehab",
+                  "Direct Support & Progress Reviews",
+                ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-sm text-slate-300">
                     <Check className="mt-0.5 h-4.5 w-4.5 shrink-0 text-lime-400" />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
-              
+
               <div className="mt-8">
                 <a
-                  href={wa("Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further.")}
+                  href={wa(
+                    "Hi! I want to enroll in the EAPS - Elite Athlete Performance System (₹4999). Please guide me further.",
+                  )}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-lime-400 px-6 py-4 text-sm font-bold uppercase tracking-wider text-black transition-all hover:bg-lime-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(163,230,53,0.2)]"
@@ -766,9 +939,7 @@ function LabGallery() {
                   <h3 className="font-display text-2xl tracking-wide text-white group-hover:text-lime-400 transition-colors">
                     {s.title}
                   </h3>
-                  <p className="mt-1 text-xs text-slate-400 leading-relaxed">
-                    {s.desc}
-                  </p>
+                  <p className="mt-1 text-xs text-slate-400 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </Reveal>
@@ -781,11 +952,20 @@ function LabGallery() {
 
 function LabTrophies() {
   const items = [
-    { title: "MM Jagdale Trophy Champion 2025", desc: "Under-15 Squad — Winning Under Structured S&C Program." },
-    { title: "MPL", desc: "Madhya Pradesh Premier League Women's — Strength And Conditioning Coach Of Gwalior Shernis 2026." },
+    {
+      title: "MM Jagdale Trophy Champion 2025",
+      desc: "Under-15 Squad — Winning Under Structured S&C Program.",
+    },
+    {
+      title: "MPL",
+      desc: "Madhya Pradesh Premier League Women's — Strength And Conditioning Coach Of Gwalior Shernis 2026.",
+    },
     { title: "Bhau Nivsarkar Trophy", desc: "Winner 2025-26 — Strength & Conditioning Coach." },
     { title: "100+ Match-Ready Athletes", desc: "Cricketers Prepped Across Formats & Age Groups." },
-    { title: "Zero-Injury Pre-Season", desc: "Full Team Completed Pre-season With No Soft-tissue Injuries." },
+    {
+      title: "Zero-Injury Pre-Season",
+      desc: "Full Team Completed Pre-season With No Soft-tissue Injuries.",
+    },
   ];
   return (
     <section className="px-5 py-20 md:px-8 md:py-28 bg-background">
@@ -839,16 +1019,21 @@ function LabCoachStrip() {
 
           {/* Right side: Biography */}
           <div className="flex-1 flex flex-col justify-center text-center md:text-left py-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-400">S&C Head Coach</p>
-            <h3 className="mt-1 font-display text-4xl tracking-wide text-white">
-              ANUPAM JAIN
-            </h3>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-400">
+              S&C Head Coach
+            </p>
+            <h3 className="mt-1 font-display text-4xl tracking-wide text-white">ANUPAM JAIN</h3>
             <p className="mt-3 text-sm text-slate-300 leading-relaxed">
-              Certified S&C Coach With 7+ Years Of Training Competitive Cricketers & Team Athletes. Specializes In Field Agility, Speed Mechanics, And Bulletproofing Players Against Joint Injuries.
+              Certified S&C Coach With 7+ Years Of Training Competitive Cricketers & Team Athletes.
+              Specializes In Field Agility, Speed Mechanics, And Bulletproofing Players Against
+              Joint Injuries.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
               {["S&C Certified", "Yoga-Integrated", "Functional Training"].map((t) => (
-                <span key={t} className="rounded-full border border-border bg-slate-900/60 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                <span
+                  key={t}
+                  className="rounded-full border border-border bg-slate-900/60 px-3.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400"
+                >
                   {t}
                 </span>
               ))}
@@ -896,7 +1081,6 @@ function LabZone() {
     </>
   );
 }
-
 
 function Index() {
   const [zone, setZone] = useState<Zone>("coaching");
