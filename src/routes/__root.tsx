@@ -75,25 +75,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0A0A0A" },
       { name: "google-site-verification", content: "XCvHcOQm8emgEpMqM4ShXmSxgnxxHueNa753uNOdDl0" },
-      { title: "1on1Coaching | Elite Performance Lab" },
+      { title: "1-on-1 Fitness Coaching in India | Weight Loss, Muscle Gain & Nutrition Plans" },
       {
         name: "description",
         content:
-          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+          "Get personalized fitness coaching, weight loss plans, muscle building programs, sports nutrition guidance, and direct WhatsApp support from certified coaches.",
       },
-      { property: "og:title", content: "1on1Coaching | Elite Performance Lab" },
+      {
+        property: "og:title",
+        content: "1-on-1 Fitness Coaching in India | Weight Loss, Muscle Gain & Nutrition Plans",
+      },
       {
         property: "og:description",
         content:
-          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+          "Get personalized fitness coaching, weight loss plans, muscle building programs, sports nutrition guidance, and direct WhatsApp support from certified coaches.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "1on1Coaching | Elite Performance Lab" },
+      {
+        name: "twitter:title",
+        content: "1-on-1 Fitness Coaching in India | Weight Loss, Muscle Gain & Nutrition Plans",
+      },
       {
         name: "twitter:description",
         content:
-          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+          "Get personalized fitness coaching, weight loss plans, muscle building programs, sports nutrition guidance, and direct WhatsApp support from certified coaches.",
       },
       {
         property: "og:image",
