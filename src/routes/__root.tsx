@@ -74,16 +74,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0A0A0A" },
+      { name: "google-site-verification", content: "XCvHcOQm8emgEpMqM4ShXmSxgnxxHueNa753uNOdDl0" },
       { title: "1on1Coaching | Elite Performance Lab" },
-      { name: "description", content: "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results." },
+      {
+        name: "description",
+        content:
+          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+      },
       { property: "og:title", content: "1on1Coaching | Elite Performance Lab" },
-      { property: "og:description", content: "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results." },
+      {
+        property: "og:description",
+        content:
+          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "1on1Coaching | Elite Performance Lab" },
-      { name: "twitter:description", content: "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d0c82ce-9440-449a-be49-041d86f99986" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d0c82ce-9440-449a-be49-041d86f99986" },
+      {
+        name: "twitter:description",
+        content:
+          "Science-based Performance Coaching & Personalized Nutrition. Building stronger bodies, improving performance, and creating lasting results.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d0c82ce-9440-449a-be49-041d86f99986",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/0d0c82ce-9440-449a-be49-041d86f99986",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
