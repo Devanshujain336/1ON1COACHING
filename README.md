@@ -10,13 +10,12 @@ A premium, high-performance website built for **Anupam Jain** — Performance Co
 
 ## About the Project
 
-This website was designed and developed from scratch as a client project. The goal was to create a visually striking, mobile-first web presence that reflects the premium nature of the coaching brand — combining personal fitness coaching services, a sports performance lab, and a natural nutrition product line (Poshak) into one cohesive experience.
+This website was designed and developed from scratch as a client project. The goal was to create a visually striking, mobile-first web presence that reflects the premium nature of the coaching brand — combining personal fitness coaching services and a sports performance lab into one cohesive experience.
 
 ### Key Features
 
 - **Dual-Zone Experience** — Seamless toggle between *1-on-1 Coaching* and *Elite Performance Lab* sections with animated transitions
 - **WhatsApp-First CTA Flow** — All calls-to-action route directly to WhatsApp with pre-filled contextual messages for instant lead capture
-- **Poshak Store** — Integrated product showcase for natural nutrition products with direct ordering via WhatsApp
 - **Responsive & Mobile-First** — Fully optimized for all screen sizes with snap-scroll carousels and touch-friendly interactions
 - **Performance Optimized** — Lazy-loaded images, code splitting, and edge deployment via Cloudflare Workers
 - **SEO & Social Sharing** — Full Open Graph + Twitter Card meta tags for rich link previews

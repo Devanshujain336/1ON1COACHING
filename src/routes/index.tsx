@@ -19,11 +19,6 @@ import labAthleteImg from "@/assets/3L5A0820_1.jpg";
 import labGymImg from "@/assets/IMG_7354.jpg";
 import labTrophyIndividualImg from "@/assets/lab_trophy_individual.jpg";
 import labJagdaleImg from "@/assets/lab_jagdale.jpg";
-import sattuImg from "@/assets/sattu.jpg";
-import proteinImg from "@/assets/protein.jpg";
-import ladooImg from "@/assets/ladoo.jpg";
-import ragiImg from "@/assets/ragi.jpg";
-import koduImg from "@/assets/kodu.jpg";
 
 export const Route = createFileRoute("/")({ component: Index });
 
@@ -244,89 +239,7 @@ function Plans() {
   );
 }
 
-function Poshak() {
-  const products = [
-    { name: "Sattu Power", img: sattuImg, desc: "Low in glycemic index, improves digestion and high in fibre.", price: "Ask for Price" },
-    { name: "Quinoa Flour", img: proteinImg, desc: "Gluten free, rich in antioxidants and contains all 9 essential amino acids. Manages hormonal balance, pregnancy friendly, supports skin and hair health.", price: "Ask for Price" },
-    { name: "Energy Ladoo", img: ladooImg, desc: "Improves immunity and muscle strength and increases alertness.", price: "Ask for Price" },
-    { name: "Ragi Flour", img: ragiImg, desc: "Strengthening bones and managing blood sugar. Low glycemic index with essential amino acids — a nutritional powerhouse.", price: "Ask for Price" },
-    { name: "Kodu (Millet)", img: koduImg, desc: "Promotes heart health, rich in antioxidants, supports blood sugar control and a source of vitamins B.", price: "Ask for Price" },
-  ];
 
-  return (
-    <section id="poshak" className="relative px-5 py-24 md:px-8 md:py-32">
-      <Reveal>
-        <div className="mx-auto max-w-5xl rounded-3xl border border-[var(--brand-saffron)]/40 bg-gradient-to-br from-[var(--brand-saffron)]/15 via-background to-background px-6 py-10 text-center md:py-14">
-          <div className="mx-auto mb-3 h-px w-20 bg-[var(--brand-saffron)]/60" />
-          <h2 className="font-display text-5xl tracking-widest text-[var(--brand-saffron)] sm:text-6xl md:text-7xl">
-            POSHAK · पोषक
-          </h2>
-          <div className="mx-auto mt-3 h-px w-20 bg-[var(--brand-saffron)]/60" />
-          <p className="mt-4 text-sm uppercase tracking-[0.3em] text-muted-foreground">
-            Ancient Nutrition. Modern Performance.
-          </p>
-        </div>
-      </Reveal>
-
-      <Reveal delay={0.1}>
-        <p className="mx-auto mt-10 max-w-2xl text-center text-base text-muted-foreground">
-          Poshak brings you time-tested, natural protein foods rooted in Indian tradition — clean,
-          powerful, and made for those who train hard.
-        </p>
-      </Reveal>
-
-      <div className="mx-auto mt-12 grid max-w-6xl gap-5 grid-cols-2 md:grid-cols-3">
-        {products.map((p, i) => (
-          <Reveal key={p.name} delay={i * 0.08}>
-            <div className="group h-full overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-[var(--brand-saffron)]/50">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  width={800} height={800}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-4 md:p-5">
-                <h3 className="font-display text-xl tracking-wide md:text-2xl">{p.name.toUpperCase()}</h3>
-                <p className="mt-1 text-xs text-muted-foreground md:text-sm">{p.desc}</p>
-                <p className="mt-3 text-xs uppercase tracking-widest text-[var(--brand-saffron)]">{p.price}</p>
-                <a
-                  href={wa(`Hi! I want to order ${p.name} from Poshak. Please share details and pricing.`)}
-                  target="_blank" rel="noopener noreferrer"
-                  className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[var(--brand-wa)] px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-black glow-wa"
-                >
-                  Order on WhatsApp →
-                </a>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-        <Reveal delay={0.3}>
-          <div className="flex h-full min-h-[280px] flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-card/40 p-6 text-center">
-            <div className="mb-3 flex gap-1.5">
-              {[0, 1, 2].map((i) => (
-                <motion.span
-                  key={i}
-                  className="h-2 w-2 rounded-full bg-[var(--brand-saffron)]"
-                  animate={{ opacity: [0.3, 1, 0.3] }}
-                  transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.2 }}
-                />
-              ))}
-            </div>
-            <p className="font-display text-2xl tracking-wide">More Coming Soon</p>
-            <p className="mt-2 text-xs text-muted-foreground">New products dropping shortly</p>
-          </div>
-        </Reveal>
-      </div>
-
-      <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
-        All products are natural, locally sourced, and free from artificial additives.
-      </p>
-    </section>
-  );
-}
 
 function WhyUs() {
   const items = [
@@ -456,7 +369,7 @@ function Footer() {
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Quick Links</p>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
-            {[["Coaching", "#coaching"], ["Plans", "#plans"], ["Poshak Store", "#poshak"], ["Contact", "#contact"]].map(([l, h]) => (
+            {[["Coaching", "#coaching"], ["Plans", "#plans"], ["About", "#about"], ["Contact", "#contact"]].map(([l, h]) => (
               <li key={h}><a href={h} className="hover:text-primary">{l}</a></li>
             ))}
           </ul>
@@ -899,7 +812,6 @@ function CoachingZone() {
       <Hero />
       <About />
       <Plans />
-      <Poshak />
       <WhyUs />
       <Testimonials />
       <ContactCTA />
